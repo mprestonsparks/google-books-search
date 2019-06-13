@@ -101,58 +101,35 @@ class Books extends Component {
                 {this.state.books.map(book => {
                   return (
                     <ListItem key={book._id}>
-
-
-
-
-
-
-
-
-
-                      <Row>
-
-                      <Col size="md-9">
-                        <a href={"/books/" + book._id}>
-                          <strong>
-                            {book.title} by {book.author}
-                          </strong>
-                        </a>
-                      </Col>
-
-                      <Col size="md-3">
-                        <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                      </Col>
-
-                      </Row>
-
-                      <Row>
-
-                  <Col size="md-12">
-                      <Row>
-
-                        <Col size="md-4">
-                          {/* <h1>Image Image Image</h1> */}
-                          <img src="https://placehold.it/200">
-
-                         </img>
-
-                        </Col>
-
-                        <Col size="md-8">
-                          <h6>Description description description</h6>
-                        </Col>
-
-                      </Row>
-                  </Col>
-
-                      </Row>
-
-
-
-
-
-
+                        <Row>
+                          <Col size="md-9">
+                            <a href={"/books/" + book._id}>
+                            <strong>
+                              {book.title} by {book.author}
+                            </strong>
+                            </a>
+                          </Col>
+                          <Col size="md-3">
+                            <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col size="md-12">
+                            <Row>
+                              <Col size="md-4">
+                                <img src="https://placehold.it/200">
+                                </img>
+                              </Col>
+                              <Col size="md-8">
+                              <p>
+                              Description description description Description description description 
+                              description description description Description description description 
+                              description description description Description description description 
+                              </p>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
                     </ListItem>
                   );
                 })}
