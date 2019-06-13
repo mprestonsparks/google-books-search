@@ -63,96 +63,52 @@ class Books extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="md-6">
             <Jumbotron>
-              <h1>Search the Google Books API</h1>
-              <h2>using React</h2>
+              <h1>What Books Should I Read?</h1>
             </Jumbotron>
             <form>
-              <h3>Book Search</h3>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title of book"
+                placeholder="Title (required)"
               />
-              {/* <Input
+              <Input
                 value={this.state.author}
                 onChange={this.handleInputChange}
                 name="author"
                 placeholder="Author (required)"
-              /> */}
+              />
+              <TextArea
+                value={this.state.synopsis}
+                onChange={this.handleInputChange}
+                name="synopsis"
+                placeholder="Synopsis (Optional)"
+              />
               <FormBtn
-                // Comment on next line is in case search by author needed
-                disabled={!(this.state.title)} // && this.state.author)}
+                disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}
               >
-                Search
+                Submit Book
               </FormBtn>
             </form>
-
-          {/* </Col> */}
-          {/* {/* <Col size="md-6 sm-12"> */}
+          </Col>
+          <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Results</h1>
+              <h1>Books On My List</h1>
             </Jumbotron>
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => {
                   return (
                     <ListItem key={book._id}>
-
-
-
-
-
-
-
-
-
-                      <Row>
-
-                      <Col size="md-9">
-                        <a href={"/books/" + book._id}>
-                          <strong>
-                            {book.title} by {book.author}
-                          </strong>
-                        </a>
-                      </Col>
-
-                      <Col size="md-3">
-                        <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                      </Col>
-
-                      </Row>
-
-                      <Row>
-
-                  <Col size="md-12">
-                      <Row>
-
-                        <Col size="md-4">
-                          {/* <h1>Image Image Image</h1> */}
-                          <img src="https://placehold.it/200">
-
-                         </img>
-
-                        </Col>
-
-                        <Col size="md-8">
-                          <h6>Description description description</h6>
-                        </Col>
-
-                      </Row>
-                  </Col>
-
-                      </Row>
-
-
-
-
-
-
+                      <a href={"/books/" + book._id}>
+                        <strong>
+                          {book.title} by {book.author}
+                        </strong>
+                      </a>
+                      <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                     </ListItem>
                   );
                 })}
