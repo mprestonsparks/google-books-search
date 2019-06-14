@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Jumbotron from "../../components/Jumbotron";
-import DeleteBtn from "../../components/DeleteBtn";
+// import DeleteBtn from "../../components/DeleteBtn";
+import ViewBtn from "../../components/ViewBtn";
+import SaveBtn from "../../components/SaveBtn";
 import API from "../../utils/API";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
@@ -59,6 +61,7 @@ class Books extends Component {
     }
   };
 
+
   render() {
     return (
       <Container fluid>
@@ -91,11 +94,7 @@ class Books extends Component {
               </FormBtn>
             </form>
 
-          {/* </Col> */}
-          {/* {/* <Col size="md-6 sm-12"> */}
-            <Jumbotron>
-              <h1>Results</h1>
-            </Jumbotron>
+            <h1>Results</h1>
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => {
@@ -110,17 +109,20 @@ class Books extends Component {
                             </a>
                           </Col>
                           <Col size="md-3">
-                            <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                            <ViewBtn onClick={() => this.viewBook(book._id)} />
+                            <SaveBtn onClick={() => this.saveBook(book._id)} />
+                            {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
+                            {/* <DeleteBtn onClick={() => this.deleteBook(book._id)} /> */}
                           </Col>
                         </Row>
                         <Row>
                           <Col size="md-12">
                             <Row>
-                              <Col size="md-4">
+                              <Col size="md-3">
                                 <img src="https://placehold.it/200">
                                 </img>
                               </Col>
-                              <Col size="md-8">
+                              <Col size="md-9">
                               <p>
                               Description description description Description description description 
                               description description description Description description description 
