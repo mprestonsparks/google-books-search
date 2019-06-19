@@ -3,8 +3,7 @@
 
 This is a React-based Google Books Search app.
 
-## Live Demo
-[![Deployed](https://www.herokucdn.com/deploy/button.svg)](https://r3act-book-s3arch.herokuapp.com/)
+ [View Demo](https://r3act-book-s3arch.herokuapp.com/)
 
 
 ## Technologies Used
