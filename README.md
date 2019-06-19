@@ -1,9 +1,13 @@
 # Google Books Search
+ [View Demo](https://r3act-book-s3arch.herokuapp.com/)
+ <br><br>
+ 
+ 
 ### Overview
 
 This is a React-based Google Books Search app.
 
- [View Demo](https://r3act-book-s3arch.herokuapp.com/)
+
 
 
 ## Technologies Used
