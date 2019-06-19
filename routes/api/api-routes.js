@@ -18,7 +18,9 @@ module.exports = function(app) {
 
     app.post("/search", (req, res) => {
         // set bookTitle to the req.body.title with spaces replaced with plus signs(+)
-        let bookTitle = req.body.title.replace(/\s/g, "+");
+        // let bookTitle = req.body.title.replace(/\s/g, "+");
+        let bookTitle = req.body.title;
+
         axios.get(
             `https://www.googleapis.com/books/v1/volumes?q=${bookTitle}&key=${process.env.GBOOKS_KEY}`
         ).then(
@@ -26,7 +28,7 @@ module.exports = function(app) {
                 res.json(response.data.items)
             }
         ).catch(
-            (err) => {
+            (error) => {
                 res.json({error: error})
             }
         );

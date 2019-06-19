@@ -50,8 +50,9 @@ class Books extends Component {
   // Then reload books from the database
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
+    if (this.state.title) {
+      console.log("here")
+      API.searchBooks({
         title: this.state.title,
         author: this.state.author,
         synopsis: this.state.synopsis

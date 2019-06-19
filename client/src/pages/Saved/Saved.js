@@ -22,16 +22,6 @@ class Saved extends React.Component {
             }
         );
     }
-
-    // render() {
-    //     console.log(this.state.savedBooks);
-    //     return(
-    //         <main>
-    //             <List savedBooks={this.state.savedBooks} path={this.props.match.path}/>
-    //         </main>
-    //     );
-    // }
-
     render() {
         return (
           <Container fluid>
@@ -39,9 +29,9 @@ class Saved extends React.Component {
               <Col size="md-12">
                 <h1>Saved Books</h1>
 
-                    {this.state.saved.length ? (
+                    {this.state.savedBooks.length ? (
                     <List>
-                        {this.state.saved.map(book => {
+                        {this.state.savedBooks.map(book => {
                         return (
                             <ListItem key={book._id}>
                                 <Row>
